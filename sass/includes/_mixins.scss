@@ -1,0 +1,9 @@
+/* clear-fix */
+
+@mixin clearfix {
+    &:after {
+        content: '';
+        clear: both;
+        display: block;
+    }
+}

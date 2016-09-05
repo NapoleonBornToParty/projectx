@@ -1,0 +1,76 @@
+@import '../../node_modules/susy/sass/susy';
+ 
+
+/* grid sussy */
+
+.col_tab_1{
+	  @include span(2 of 12);
+	   &:last-child {
+            @include last;
+        }
+}
+
+.col_tab_2{
+	  @include span(3 of 12);
+	
+}
+.col_tab_3{
+	  @include span(4);
+	    &:last-child {
+            @include last;
+        }
+}
+.col_tab_4{
+	  @include span(5 of 12);
+	   &:last-child {
+            @include last;
+        }
+}
+.col_tab_5{
+	  @include span(6 of 12);
+	   &:last-child {
+            @include last;
+        }
+}
+.col_tab_6{
+	  @include span(7 of 12);
+	   &:last-child {
+            @include last;
+        }
+}
+.col_tab_7{
+	  @include span(8 of 12);
+	   &:last-child {
+            @include last;
+        }
+}
+.col_tab_8{
+	  @include span(9 of 12);
+	   &:last-child {
+            @include last;
+        }
+}
+.col_tab_9{
+	  @include span(10 of 12);
+	   &:last-child {
+            @include last;
+        }
+}
+.col_tab_10{
+	  @include span(11 of 12);
+	   &:last-child {
+            @include last;
+        }
+}
+.col_tab_11{
+	  @include span(12 of 12);
+	   &:last-child {
+            @include last;
+        }
+}
+.col_tab_12{
+	  @include span(12 last);
+	   &:last-child {
+            @include last;
+        }
+}

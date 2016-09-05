@@ -1,0 +1,65 @@
+@import 'includes/reset';
+@import 'includes/layout';
+@import 'includes/mixins';
+
+$susy: (
+/* Tells Susy to use 12 columns */
+
+columns: 12,
+/* Tells Susy that the container has a max-width of 1120px */
+container: 1120px,
+/* Tells Susy to use border-box */
+
+global-box-sizing: border-box, 
+debug:(
+		image: show
+	));
+.wrap {
+    @include container;
+}
+
+div {
+    border: 1px dotted #0fa;
+}
+
+
+/* Tells Susy there's 8 columns in the content */
+
+.content {
+    @include span(8);
+    height: 200px;
+    background-color: #f4f4f4;
+    
+}
+
+/* Tells Susy there's 4 columns in the sidebar, and its the last item on the row. */
+
+.sidebar {
+    @include span(4 last);
+    height: 250px;
+    background-color: #f5f4f4;
+}
+
+.social {
+    @include container;
+    /* Adds a padding of 19px to each side of the .social container */
+    padding-top: gutter();
+    padding-bottom: gutter();
+    /* Adding a clearfix because all children elements are floated */
+    @include clearfix;
+    .social__list-item {
+        padding: gutter();
+        /* Telling Susy that there are 10 items, and each takes up 1 row */
+        &:nth-child(1n+1) {
+            background-color: #f5f4f4;
+        }
+        &:nth-child(2n+2) {
+            background-color: #f4f4f4;
+        }
+        @include span(1 of 10);
+        /* Another way to tell Susy that this is the last item in the row */
+        &:last-child {
+            @include last;
+        }
+    }
+}
