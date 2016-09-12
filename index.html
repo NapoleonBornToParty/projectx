@@ -40,10 +40,33 @@
                 </div>
                 <div class="col_tab_3">
                     <div class="wrap__color">
-                        <div class="color" data-ng-repeat='color in colors'>
-							<p data-ng-bind='color.color'></p>
-							<p data-ng-bind='color.hex'></p>
-                        </div>
+                        <label>
+                            Search:
+                        </label>
+                        <input data-ng-model="q" placeholder="Serching by same level" type="text">
+                            <div class="color" data-ng-repeat="color in colors | filter: q">
+                                <i>
+                                    {{$index + 1}}
+                                </i>
+                                <p data-ng-bind="color.color">
+                                </p>
+                                <p data-ng-bind="color.hex">
+                                </p>
+                            </div>
+                            <input data-ng-model="qOption.color" placeholder="Serching by same color" type="text">
+                                <input data-ng-model="qOption.hex" placeholder="Serching by same hex" type="text">
+                                    <div class="color" data-ng-repeat="color in colors | filter: qOption">
+                                        <i>
+                                            {{$index + 1}}
+                                        </i>
+                                        <p data-ng-bind="color.color">
+                                        </p>
+                                        <p data-ng-bind="color.hex">
+                                        </p>
+                                    </div>
+                                </input>
+                            </input>
+                        </input>
                     </div>
                 </div>
                 <div class="col_tab_3">
@@ -55,35 +78,9 @@
         </div>
         <div class="social">
             <ul>
-                <li class="social__list-item">
-                    1
-                </li>
-                <li class="social__list-item">
-                    1
-                </li>
-                <li class="social__list-item">
-                    1
-                </li>
-                <li class="social__list-item">
-                    1
-                </li>
-                <li class="social__list-item">
-                    1
-                </li>
-                <li class="social__list-item">
-                    1
-                </li>
-                <li class="social__list-item">
-                    1
-                </li>
-                <li class="social__list-item">
-                    1
-                </li>
-                <li class="social__list-item">
-                    1
-                </li>
-                <li class="social__list-item">
-                    1
+                <li class="social__list-item" data-ng-repeat="i in [1,2,3,4,5,6,7,8,9,10]">
+                    <span data-ng-bind="i">
+                    </span>
                 </li>
             </ul>
         </div>

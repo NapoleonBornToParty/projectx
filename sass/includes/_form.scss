@@ -1,7 +1,9 @@
-form{
-	display: block;
-	width: 100%;
-	input{
-		width: 100%;
-	}
+form {
+    display: block;
+    width: 100%;
+}
+
+input {
+    width: 100%;
+    text-overflow: ellipsis;
 }
