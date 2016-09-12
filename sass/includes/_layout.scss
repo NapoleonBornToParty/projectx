@@ -15,7 +15,8 @@
 	
 }
 .col_tab_3{
-	  @include span(4);
+	  @include span(4 of 12);
+	  padding: gutter(inner);
 	    &:last-child {
             @include last;
         }
