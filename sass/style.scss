@@ -3,30 +3,15 @@
 @import 'includes/mixins';
 @import 'includes/form';
 
-$susy: (
-/* Tells Susy to use 12 columns */
-
-columns: 12,
-/* Tells Susy that the container has a max-width of 1120px */
-
-container: 1120px,
-/* Tells Susy to use border-box */
-
-global-box-sizing: border-box, debug:());
-
 .wrap {
     @include container;
 }
-
-/* Tells Susy there's 8 columns in the content */
 
 .content {
     @include span(8);
     min-height: 200px;
     background-color: #f4f4f4;
 }
-
-/* Tells Susy there's 4 columns in the sidebar, and its the last item on the row. */
 
 .sidebar {
     @include span(4 last);

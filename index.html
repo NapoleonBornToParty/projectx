@@ -9,16 +9,15 @@
             </script>
             <script src="bower_components/angular/angular.js">
             </script>
+            <script src="/bower_components/angular-route/angular-route.js"></script>
             <script src="js/ctrls.js">
-            </script>
-            <script src="bower_components/gsap/TweenMax.min.js">
             </script>
             <link href="css/style.min.css" rel="stylesheet">
             </link>
         </meta>
     </head>
-    <body data-ng-controller="xAppListCtrl">
-        <div class="wrap">
+    <body data-ng-controller="xAppMainCtrl">
+        <div class="wrap" data-ng-controller="xAppListCtrl">
             <div class="content">
                 <div class="col_tab_3">
                     <div class="wrap__form">
@@ -44,33 +43,47 @@
                             Search:
                         </label>
                         <input data-ng-model="q" placeholder="Serching by same level" type="text">
-                            <div class="color" data-ng-repeat="color in colors | filter: q">
-                                <i>
-                                    {{$index + 1}}
+                            <div class="color" data-ng-repeat="color in content.colorsArray | filter: q as results0">
+                                <i data-ng-bind="$index + 1">
                                 </i>
-                                <p data-ng-bind="color.color">
+                                <p data-ng-bind="color.colorName">
                                 </p>
-                                <p data-ng-bind="color.hex">
+                                <p data-ng-bind="color.hexValue">
                                 </p>
                             </div>
+                            <p data-ng-if="results0.length === 0">
+                                <span data-ng-bind="alert.search">
+                                </span>
+                            </p>
                             <input data-ng-model="qOption.color" placeholder="Serching by same color" type="text">
                                 <input data-ng-model="qOption.hex" placeholder="Serching by same hex" type="text">
-                                    <div class="color" data-ng-repeat="color in colors | filter: qOption">
-                                        <i>
-                                            {{$index + 1}}
+                                    <div class="color" data-ng-repeat="color in colors | filter:qOption as results">
+                                        <i data-ng-bind="$index + 1">
                                         </i>
                                         <p data-ng-bind="color.color">
                                         </p>
                                         <p data-ng-bind="color.hex">
                                         </p>
                                     </div>
+                                    <p data-ng-if="results.length === 0">
+                                        <span data-ng-bind="alert.search">
+                                        </span>
+                                    </p>
                                 </input>
                             </input>
                         </input>
                     </div>
                 </div>
                 <div class="col_tab_3">
-                    333
+                    <pre>
+                        Data : {{content | json:4}}
+                    </pre>
+                    <p>
+                        Status : {{statuscode}}
+                    </p>
+                    <p>
+                        StatusText : {{statustext}}
+                    </p>
                 </div>
             </div>
             <div class="sidebar">
