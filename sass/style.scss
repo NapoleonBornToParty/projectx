@@ -1,40 +1,84 @@
-@import 'includes/reset';
-@import 'includes/layout';
-@import 'includes/mixins';
-@import 'includes/form';
-
-.wrap {
-    @include container;
-}
-
-.content {
-    @include span(8);
-    min-height: 200px;
-    background-color: #f4f4f4;
-}
-
-.sidebar {
-    @include span(4 last);
-    height: 250px;
-    background-color: #f5f4f4;
-}
-
-.social {
-    @include container;
-    padding-top: gutter(inner);
-    padding-bottom: gutter(inner);
-    @include clearfix;
-    .social__list-item {
-        padding: gutter();
-        &:nth-child(1n+1) {
-            background-color: #f5f4f4;
-        }
-        &:nth-child(2n+2) {
-            background-color: #f4f4f4;
-        }
-        @include span(1 of 10);
-        &:last-child {
-            @include last;
+    @import 'includes/reset';
+    @import 'includes/layout';
+    @import 'includes/mixins';
+    @import 'includes/form';
+    .wrap {
+        @include container;
+    }
+    
+    .content {
+        @include span(8);
+        min-height: 200px;
+        background-color: #f4f4f4;
+    }
+    
+    .sidebar {
+        @include span(4 last);
+        height: 250px;
+        background-color: #f5f4f4;
+    }
+    
+    .social {
+        @include container;
+        padding-top: gutter(inner);
+        padding-bottom: gutter(inner);
+        @include clearfix;
+        .social__list-item {
+            padding: gutter();
+            &:nth-child(1n+1) {
+                background-color: #f5f4f4;
+            }
+            &:nth-child(2n+2) {
+                background-color: #f4f4f4;
+            }
+            @include span(1 of 10);
+            &:last-child {
+                @include last;
+            }
         }
     }
-}
+    
+    * {
+        outline: 1px solid #ccc;
+    }
+    
+    body {
+        max-width: 1920px;
+        width: 100%;
+        margin: auto;
+    }
+    
+    .container {
+        @include container;
+    }
+    
+    .main {
+        header.header {
+            .logo {
+                width: 100px;
+                height: 50px;
+                margin: auto;
+            }
+            .title_wraper {
+                h1, h2 {
+                    text-align: center;
+                }
+            }
+        }
+        .form_block {
+            .account_register {
+                display: block;
+                margin-left: auto;
+                width: 290px;
+            }
+        }
+        .box_block {
+            @include container;
+            .box_block__item {
+                @include span(3 of 12);
+                &:last-child {
+                    @include last;
+                }
+            }
+        }
+    }
